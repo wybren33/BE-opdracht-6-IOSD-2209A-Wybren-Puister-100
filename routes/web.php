@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AllergenenController;
-
+use App\Http\Controllers\LeverantieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,8 @@ Route::get('/dashboard', function () {
 Route::get('overzicht', [ProductController::class, 'index'])->name('overzicht');
 
 Route::get('allergenen/{id}', [AllergenenController::class, 'show'])->name('allergenen.show');
+
+Route::get('leverantie/{id}', [LeverantieController::class, 'show'])->name('leverantie.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

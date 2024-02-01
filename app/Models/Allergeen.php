@@ -11,8 +11,8 @@ class Allergeen extends Model
 {
     use HasFactory;
 
-    public function productPerAllergeens()
+    public function productperallergeen(): BelongsTo
     {
-        return $this->hasMany('App\Models\ProductPerAllergeen');
+        return $this->belongsTo(ProductPerAllergeen::class);
     }
 }

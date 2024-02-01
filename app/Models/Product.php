@@ -21,4 +21,9 @@ class Product extends Model
     {
         return $this->hasMany('App\Models\ProductPerAllergeen');
     }
+
+    public function productPerLeveranciers()
+    {
+        return $this->hasMany(ProductPerLeverancier::class);
+    }
 }
