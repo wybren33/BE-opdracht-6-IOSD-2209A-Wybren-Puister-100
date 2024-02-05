@@ -13,6 +13,7 @@ class Leverancier extends Model
 
     public function productPerLeveranciers()
     {
+
         return $this->hasMany(ProductPerLeverancier::class);
     }
 }

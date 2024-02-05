@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AllergenenController;
 use App\Http\Controllers\LeverantieController;
+use App\Http\Controllers\LeverancierController;
+use App\Http\Controllers\ProductenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +21,17 @@ use App\Http\Controllers\LeverantieController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('overzicht', [ProductController::class, 'index'])->name('overzicht');
+
+Route::get('leverancier', [LeverancierController::class, 'index'])->name('leverancier');
+
+Route::get('leverancier/{id}', [ProductenController::class, 'index'])->name('leverancier.producten');
 
 Route::get('allergenen/{id}', [AllergenenController::class, 'show'])->name('allergenen.show');
 
