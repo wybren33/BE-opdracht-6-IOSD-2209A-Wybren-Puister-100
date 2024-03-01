@@ -7,6 +7,7 @@ use App\Http\Controllers\AllergenenController;
 use App\Http\Controllers\LeverantieController;
 use App\Http\Controllers\LeverancierController;
 use App\Http\Controllers\ProductenController;
+use App\Http\Controllers\LeveringController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,10 @@ Route::get('overzicht', [ProductController::class, 'index'])->name('overzicht');
 Route::get('leverancier', [LeverancierController::class, 'index'])->name('leverancier');
 
 Route::get('leverancier/{id}', [ProductenController::class, 'index'])->name('leverancier.producten');
+
+Route::get('/levering/create/{id}', [LeveringController::class, 'index'])->name('levering.create');
+
+Route::post('/levering/store/{id}', [LeveringController::class, 'store'])->name('levering.store');
 
 Route::get('allergenen/{id}', [AllergenenController::class, 'show'])->name('allergenen.show');
 
